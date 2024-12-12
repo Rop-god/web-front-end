@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>讲师详情</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            width: 80%;
+            margin: 20px auto;
+            background-color: white;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .header {
+            background-color: #0c3ba1;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        .content {
+            line-height: 1.6;
+        }
+        .professor-details img {
+            width: 150px;
+            margin: 0 auto;
+            display: block;
+            height: 180px;
+            margin-bottom: 10px;
+        }
+
+        .professor-details h2 {
+            color: #0c3ba1;
+            text-align: center;
+        }
+        #professor-description {
+            text-indent: 2em;
+        }
+        .footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #0c3ba1;
+            color: white;
+            margin-top: 20px;
+        }
+        .return-button {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .return-button a {
+            background-color: #0c3ba1;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .return-button a:hover {
+            background-color: #085999;
+        }
+    </style>
+</head>
+<body>
+<div class="header">
+    <h1>讲师详情</h1>
+    <div class="return-button">
+        <a href="../Inspector.html">返回讲师列表</a>
+    </div>
+</div>
+
+<div class="container">
+    <div class="content professor-details">
+        <img src="" alt="教授照片" id="professor-photo">
+        <h2 id="professor-name"></h2>
+        <p id="professor-description">这里是讲师的详细介绍。</p>
+    </div>
+</div>
+
+<div class="footer">
+    <p>版权所有 © fzp 软件工程</p>
+</div>
+
+<script>
+    // 获取URL参数
+    function getQueryParameter(name) {
+        const urlParams = new URLSearchParams(window.location.search);
+        return urlParams.get(name);
+    }
+
+    // 动态设置教授详情
+    const professorName = getQueryParameter('name');
+    const professorPhoto = document.getElementById('professor-photo');
+    const professorNameElement = document.getElementById('professor-name');
+    const professorDescription = document.getElementById('professor-description');
+
+    // 静态教授数据
+    const professorData = {
+        '张和清': {
+            photo: '../../zhang.png',
+            description: '博士，教授，硕士生导师，软件工程专业主任、专业党支部书记。美国加州大学（河滨）访问学者。主持和参加国家级、省部级各类科研、教研项目15项，各级各类获奖10余项，作为第一作者发表SCI、EI、中文核心期刊等论文60余篇、主编教材4部。主持国家级一流本科课程、线上线下精品课程、东北林业大学一流本科课程、东北林业大学重点课程。获得第二届全国高校混合式教学设计创新大赛一等奖、华为产学合作专项奖；2次入选在线教学优秀案例；多次获得教学质量优秀奖、教学改革奖、教书育人先进个人称号。'
+        },
+        '王为': {
+            photo: '../../wang.png',
+            description: '教育部长江学者特聘教授，杭州师范大学“话语与文化研究中心”主任，浙江大学“当代中国话语研究中心”主任。分获解放军外国语学院英语语言文学学士和语言学硕士学位。自1989年至2004年，先后在荷兰、新加坡和英国任访问学者、讲师、副教授（Reader）。在众多著名国际杂志上发表论文，出版四本国际专著、两本国际编著。 创立并主编国际期刊Journal of Multicultural Discourses（Taylor & Francis）、国际丛书Cultural Discourse Studies（Taylor & Francis）、国内期刊《当代中国话语研究》（高等教育出版社）。任十多个国际著名期刊的编委。主要学术思想包括：我们必须将人类的话语（如政治话语、经济话语、外交话语、学术话语）作为不同文化相互竞争、相互渗透、相互合作、相互转化的社会现象来研究。'
+        },
+        '李用': {
+            photo: '../../li.png',
+            description: '教授软件工程课程，拥有丰富的行业经验和深厚的学术背景。他的教学风格兼具启发性和实践性，致力于通过理论与实践相结合的方式，培养学生的创新思维和问题解决能力。在行业积累了多年的宝贵经验。作为软件工程教育的倡导者热衷于推动学生参与实际项目，并鼓励他们在课堂外探索和应用所学知识。他的课程设计涵盖了从基础到高级的多个层次，旨在为学生提供一个全面的学习体验，为未来的职业生涯做好充分准备。不仅是一位优秀的教育者，也是一位充满激情和动力的导师，愿意与学生分享他的专业知识和实际经验。在他的指导下，许多学生都取得了令人瞩目的成就，并在行业中展现出色的表现。'
+        },
+        '周晓': {
+            photo: '../../zhou.png',
+            description: '赵教授在软件测试和质量保证方面有深厚的造诣，致力于提高软件的可靠性和安全性。'
+        }
+    };
+
+    // 设置页面内容
+    if (professorData[professorName]) {
+        professorPhoto.src = professorData[professorName].photo;
+        professorNameElement.textContent = professorName;
+        professorDescription.textContent = professorData[professorName].description;
+    } else {
+        professorNameElement.textContent = '未知教授';
+        professorDescription.textContent = '没有找到该教授的相关信息。';
+    }
+</script>
+</body>
+</html>

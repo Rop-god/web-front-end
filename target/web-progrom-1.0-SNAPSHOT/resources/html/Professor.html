@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>教授列表</title>
+    <style>
+        html, body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            height: 100%;
+        }
+        .wrapper {
+            display: flex;
+            flex-direction: column;
+            min-height: 100%;
+        }
+        .header {
+            background-color: #0c3ba1;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        .container {
+            width: 80%;
+            margin: 20px auto;
+            background-color: white;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .container h1 {
+            color: #0c3ba1;
+        }
+
+        .content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            line-height: 1.6;
+        }
+
+        .professor {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-decoration: none;
+            color: #0c3ba1;
+            padding: 10px;
+            border: 1px solid #0c3ba1;
+            border-radius: 5px;
+            transition: background-color 0.3s, color 0.3s;
+            text-align: center;
+            width: 150px;
+        }
+
+        .professor img {
+            width: 120px;
+            height: 160px;
+            margin-bottom: 10px;
+        }
+
+        .professor:hover {
+            background-color: #0c3ba1;
+            color: white;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #0c3ba1;
+            color: white;
+            bottom: 0;
+            width: 100%;
+            position: fixed;
+        }
+
+        .return-button {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .return-button a {
+            background-color: #0c3ba1;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .return-button a:hover {
+            background-color: #085999;
+        }
+    </style>
+</head>
+<body>
+<div class="wrapper">
+<div class="header">
+    <h1>教授列表</h1>
+    <div class="return-button">
+        <a href="../../index">返回首页</a>
+    </div>
+</div>
+
+<div class="container">
+    <div class="content">
+        <a href="professor/professor-detail01.html?name=张和清" class="professor">
+            <img src="../zhang.png" alt="张和清">
+            <span>张和清</span>
+        </a>
+        <a href="professor/professor-detail01.html?name=王为" class="professor">
+            <img src="../wang.png" alt="王为">
+            <span>王为</span>
+        </a>
+        <a href="professor/professor-detail01.html?name=李用" class="professor">
+            <img src="../li.png" alt="李用">
+            <span>李用</span>
+        </a>
+        <a href="professor/professor-detail01.html?name=周晓" class="professor">
+            <img src="../zhou.png" alt="周晓">
+            <span>周晓</span>
+        </a>
+    </div>
+</div>
+
+<div class="footer">
+    <p>版权所有 © fzp 软件工程</p>
+</div>
+</div>
+</body>
+</html>

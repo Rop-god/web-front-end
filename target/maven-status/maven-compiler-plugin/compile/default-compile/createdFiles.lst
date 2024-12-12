@@ -1,0 +1,14 @@
+com\controller\AddNews.class
+com\controller\LoginServlet.class
+com\util\DataBaseUtils.class
+com\controller\AdminServlet.class
+com\controller\DeleteServlet.class
+com\entity\NewsItem.class
+com\util\DataSourcesUtils.class
+com\controller\IndexServlet.class
+com\controller\NewDetailsServlet.class
+com\controller\EditServlet.class
+com\filter\LoginFilter.class
+com\service\NewsServiceImpl.class
+com\entity\User.class
+com\service\AdminService.class
